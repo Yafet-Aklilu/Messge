@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Message for Hasset</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #ff6f91, #ffcccb);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align items to the top */
+        }
+        .message {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            display: none; /* Initially hidden */
+            transition: opacity 0.5s;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            margin-top: 20px; /* Add margin to the top */
+            font-family: unset;
+        }
+        button {
+            width: 400px;
+            padding: 10px 12px; /* Shortened button width */
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: 450px;
+            border: none;
+            border-radius: 15px;
+            background-color: #ff6f91;
+            color: #fff;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ffcccb;
+            color: #ff6f91;
+        }
+        .footer{
+            margin-top: auto;
+            font-size: 1.2em;
+            margin: 20px;
+        }
+        .secfooter{
+            margin-top: auto;
+            font-size: 6em;
+            margin: 20px;
+            font-family:fantasy;
+        }
+    </style>
+</head>
+<body>
+    <h1>Messages For My Wife</h1>
+    <div class="message" id="messageBox"></div>
+    <button onclick="generateMessage()">Click Here To Read A Sweet Message!</button>
+
+    <div class="footer">
+        JAN26/2024-JAN26/2025
+    </div>
+    <div class="secfooter">
+        HAPPY ONE YEAR ANNIVERSARY
+    </div>
+
+    <script>
+        const messages = [
+            "Hey Hasset, just wanted to remind you how special you are!",
+            "Dear Hasset, your laughter is my favorite sound.",
+            "Sweet Hasset, you bring so much joy into my life.",
+            "My darling Hasset, every moment with you is a treasure.",
+            "To the wonderful Hasset, you make my heart smile.",
+            "Lovely Hasset, your kindness lights up my day.",
+            "Hey beautiful Hasset, you are my sunshine!",
+            "Sweetheart Hasset, I’m so grateful to have you in my life."
+        ];
+    
+        let currentIndex = 0; // Start from the first message
+    
+        function generateMessage() {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = messages[currentIndex];
+            messageBox.style.display = 'block'; // Show the message
+            
+            currentIndex = (currentIndex + 1) % messages.length; // Move to the next message
+        }
+    </script>
+</body>
+</html>
