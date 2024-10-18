@@ -51,16 +51,51 @@
             background-color: #ffcccb;
             color: #ff6f91;
         }
-        .footer{
+        .footer {
             margin-top: auto;
             font-size: 1.2em;
             margin: 20px;
         }
-        .secfooter{
+        .secfooter {
             margin-top: auto;
             font-size: 6em;
             margin: 20px;
-            font-family:fantasy;
+            font-family: fantasy;
+        }
+        
+        /* Gallery styles */
+        .gallery {
+            margin-top: 30px;
+        }
+        .gallery-button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6f91;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .gallery-button:hover {
+            background-color: #ffcccb;
+        }
+        .image-grid {
+            display: none; /* Initially hidden */
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-grid img {
+            width: 300px; /* Image width */
+            height: 200px; /* Image height */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s; /* Smooth scaling effect */
+        }
+        .image-grid img:hover {
+            transform: scale(1.1); /* Scale image on hover */
         }
     </style>
 </head>
@@ -74,6 +109,36 @@
     </div>
     <div class="secfooter">
         HAPPY ONE YEAR ANNIVERSARY
+    </div>
+
+    <!-- Image Gallery Section -->
+    <div class="gallery">
+        <h2>My Favorite Pics</h2>
+        <button class="gallery-button" onclick="showGallery('fav')">Show My Favorite Pics</button>
+        <button class="gallery-button" onclick="showGallery('other1')">Show Other Gallery 1</button>
+        <button class="gallery-button" onclick="showGallery('other2')">Show Other Gallery 2</button>
+        <button class="gallery-button" onclick="showGallery('other3')">Show Other Gallery 3</button>
+
+        <div class="image-grid" id="fav">
+            <img src="pic.jpg" alt="Favorite 1">
+            <img src="pic.jpg" alt="Favorite 2">
+            <img src="pic.jpg" alt="Favorite 3">
+        </div>
+        <div class="image-grid" id="other1">
+            <img src="pic.jpg" alt="Other 1">
+            <img src="pic.jpg" alt="Other 2">
+            <img src="pic.jpg" alt="Other 3">
+        </div>
+        <div class="image-grid" id="other2">
+            <img src="pic.jpg" alt="Other 4">
+            <img src="pic.jpg" alt="Other 5">
+            <img src="pic.jpg" alt="Other 6">
+        </div>
+        <div class="image-grid" id="other3">
+            <img src="pic.jpg" alt="Other 7">
+            <img src="pic.jpg" alt="Other 8">
+            <img src="pic.jpg" alt="Other 9">
+        </div>
     </div>
 
     <script>
@@ -96,6 +161,14 @@
             messageBox.style.display = 'block'; // Show the message
             
             currentIndex = (currentIndex + 1) % messages.length; // Move to the next message
+        }
+
+        function showGallery(galleryId) {
+            const galleries = document.querySelectorAll('.image-grid');
+            galleries.forEach(gallery => {
+                gallery.style.display = 'none'; // Hide all galleries
+            });
+            document.getElementById(galleryId).style.display = 'flex'; // Show the selected gallery
         }
     </script>
 </body>
