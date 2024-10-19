@@ -97,6 +97,35 @@
         .image-grid img:hover {
             transform: scale(1.1); /* Scale image on hover */
         }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px; /* Reduce padding for smaller screens */
+            }
+            h1 {
+                font-size: 2em; /* Smaller font size for the heading */
+            }
+            button {
+                width: 100%; /* Make buttons full width on mobile */
+                margin-left: 0; /* Remove left margin */
+            }
+            .message {
+                width: 90%; /* Make the message box width responsive */
+                font-size: 1em; /* Adjust font size */
+            }
+            .gallery {
+                flex-direction: column; /* Stack gallery buttons vertically */
+            }
+            .gallery-button {
+                width: 100%; /* Make gallery buttons full width */
+                margin-bottom: 10px; /* Add space between buttons */
+            }
+            .image-grid img {
+                width: 100%; /* Make images responsive */
+                height: auto; /* Maintain aspect ratio */
+            }
+        }
     </style>
 </head>
 <body>
@@ -120,24 +149,24 @@
         <button class="gallery-button" onclick="showGallery('other3')">Show Other Gallery 3</button>
 
         <div class="image-grid" id="fav">
-            <img src="pic.jpg" alt="Favorite 1">
-            <img src="pic.jpg" alt="Favorite 2">
-            <img src="pic.jpg" alt="Favorite 3">
+            <img src="image1.jpg" alt="Favorite 1">
+            <img src="image2.jpg" alt="Favorite 2">
+            <img src="image3.jpg" alt="Favorite 3">
         </div>
         <div class="image-grid" id="other1">
-            <img src="pic.jpg" alt="Other 1">
-            <img src="pic.jpg" alt="Other 2">
-            <img src="pic.jpg" alt="Other 3">
+            <img src="image4.jpg" alt="Other 1">
+            <img src="image5.jpg" alt="Other 2">
+            <img src="image6.jpg" alt="Other 3">
         </div>
         <div class="image-grid" id="other2">
-            <img src="pic.jpg" alt="Other 4">
-            <img src="pic.jpg" alt="Other 5">
-            <img src="pic.jpg" alt="Other 6">
+            <img src="image7.jpg" alt="Other 4">
+            <img src="image8.jpg" alt="Other 5">
+            <img src="image9.jpg" alt="Other 6">
         </div>
         <div class="image-grid" id="other3">
-            <img src="pic.jpg" alt="Other 7">
-            <img src="pic.jpg" alt="Other 8">
-            <img src="pic.jpg" alt="Other 9">
+            <img src="image10.jpg" alt="Other 7">
+            <img src="image11.jpg" alt="Other 8">
+            <img src="image12.jpg" alt="Other 9">
         </div>
     </div>
 
@@ -168,7 +197,7 @@
             galleries.forEach(gallery => {
                 gallery.style.display = 'none'; // Hide all galleries
             });
-            document.getElementById(galleryId).style.display = 'flex'; // Show the selected gallery
+            document.getElementById(galleryId).style.display = 'flex'; // Show selected gallery
         }
     </script>
 </body>
